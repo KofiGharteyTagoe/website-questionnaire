@@ -35,12 +35,15 @@
   // Set the redirect URL for Formsubmit (redirects back to same page with ?thanks param)
   const redirectInput = document.getElementById('redirectUrl');
   if (redirectInput) {
-    redirectInput.value = window.location.href.split('?')[0] + '?thanks=1';
+    // Hardcoded exact repository path to prevent 404 redirects
+    redirectInput.value = 'https://kofigharteytagoe.github.io/website-questionnaire/?thanks=1';
   }
 
   // Check if we came back from a successful submission
   if (window.location.search.includes('thanks=1')) {
     showThankYou();
+    // Clean up the URL
+    window.history.replaceState({}, document.title, window.location.pathname);
   }
 
   // ---- START BUTTON ----

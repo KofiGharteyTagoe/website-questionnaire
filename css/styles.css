@@ -1,0 +1,714 @@
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Colour palette */
+  --clr-bg:        #FAF8F5;
+  --clr-surface:   #FFFFFF;
+  --clr-surface-2: #F3F0EB;
+  --clr-border:    #E8E2DA;
+  --clr-text:      #2D3436;
+  --clr-text-soft: #636E72;
+  --clr-primary:   #7C9A82;
+  --clr-primary-d: #5E8065;
+  --clr-primary-l: rgba(124,154,130,0.12);
+  --clr-accent:    #C4866A;
+  --clr-accent-l:  rgba(196,134,106,0.12);
+  --clr-gold:      #D4A574;
+  --clr-danger:    #E17055;
+
+  /* Typography */
+  --ff-heading: 'Playfair Display', Georgia, serif;
+  --ff-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Sizing */
+  --container: 720px;
+  --radius:    12px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow:    0 4px 20px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.10), 0 8px 24px rgba(0,0,0,0.06);
+
+  /* Transitions */
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--ff-body);
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+fieldset { border: none; }
+
+/* ============================================================
+   HERO / INTRO
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #FAF8F5 0%, #EDE8E1 40%, #E2DDD5 100%);
+}
+
+.hero__bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.hero__circle--1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--clr-primary-l) 0%, transparent 70%);
+  top: -100px; right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero__circle--2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--clr-accent-l) 0%, transparent 70%);
+  bottom: -80px; left: -80px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.hero__circle--3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(212,165,116,0.15) 0%, transparent 70%);
+  top: 40%; left: 50%;
+  animation: float 12s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -20px) scale(1.05); }
+  66%      { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+.hero__content {
+  text-align: center;
+  max-width: 640px;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s var(--ease) both;
+}
+
+.hero__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: var(--clr-text);
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--clr-primary);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--clr-text-soft);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 60px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background: var(--clr-primary);
+  color: #fff;
+  border-color: var(--clr-primary);
+}
+
+.btn--primary:hover {
+  background: var(--clr-primary-d);
+  border-color: var(--clr-primary-d);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124,154,130,0.3);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-text-soft);
+  border-color: var(--clr-border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--clr-text-soft);
+  color: var(--clr-text);
+  transform: translateY(-1px);
+}
+
+.btn--ghost:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn--lg {
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+}
+
+.btn__arrow {
+  transition: transform 0.3s var(--ease);
+  font-size: 1.15em;
+}
+
+.btn:hover .btn__arrow {
+  transform: translateX(3px);
+}
+
+.btn--ghost:hover .btn__arrow {
+  transform: translateX(-3px);
+}
+
+.btn--submit {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-d));
+  padding: 1rem 2.2rem;
+}
+
+.btn--submit:hover {
+  box-shadow: 0 8px 30px rgba(124,154,130,0.35);
+}
+
+/* ============================================================
+   FORM WRAPPER
+   ============================================================ */
+.form-wrapper {
+  display: none;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 6rem;
+  animation: fadeUp 0.6s var(--ease) both;
+}
+
+.form-wrapper.active {
+  display: block;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+.progress {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--clr-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+}
+
+.progress__track {
+  height: 4px;
+  background: var(--clr-surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 14.28%;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+  border-radius: 4px;
+  transition: width 0.5s var(--ease);
+}
+
+.progress__steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.progress__dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  font-family: var(--ff-body);
+}
+
+.progress__dot.active {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(124,154,130,0.3);
+}
+
+.progress__dot.completed {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-l);
+  color: var(--clr-primary);
+}
+
+.progress__dot:not(.active):not(.completed):hover {
+  border-color: var(--clr-text-soft);
+}
+
+.progress__label {
+  font-size: 0.85rem;
+  color: var(--clr-text-soft);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ============================================================
+   STEPS
+   ============================================================ */
+.step {
+  display: none;
+  animation: fadeUp 0.5s var(--ease) both;
+}
+
+.step.active {
+  display: block;
+}
+
+.step__header {
+  margin-bottom: 2rem;
+}
+
+.step__number {
+  display: inline-block;
+  font-family: var(--ff-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  background: var(--clr-primary-l);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  margin-bottom: 0.75rem;
+}
+
+.step__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.step__desc {
+  color: var(--clr-text-soft);
+  font-size: 1.05rem;
+}
+
+.step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field__label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--clr-text);
+}
+
+.field__label em {
+  font-style: italic;
+}
+
+.field__hint {
+  font-size: 0.85rem;
+  color: var(--clr-text-soft);
+  margin-top: -0.25rem;
+}
+
+.req {
+  color: var(--clr-danger);
+}
+
+.field__input,
+.field__textarea {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  transition: all 0.25s var(--ease);
+  width: 100%;
+  outline: none;
+}
+
+.field__input::placeholder,
+.field__textarea::placeholder {
+  color: #B0AAAA;
+}
+
+.field__input:focus,
+.field__textarea:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 4px var(--clr-primary-l);
+}
+
+.field__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ============================================================
+   CHECKBOX / RADIO CARDS
+   ============================================================ */
+
+/* --- Checkbox Grid --- */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.checkbox-grid--sm {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.checkbox-card,
+.radio-card {
+  cursor: pointer;
+  display: block;
+}
+
+.checkbox-card input,
+.radio-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-card__box,
+.radio-card__box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: var(--clr-surface);
+  transition: all 0.25s var(--ease);
+  min-height: 52px;
+}
+
+.checkbox-card__box:hover,
+.radio-card__box:hover {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-l);
+}
+
+.checkbox-card input:checked + .checkbox-card__box,
+.radio-card input:checked + .radio-card__box {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-l);
+  box-shadow: var(--shadow-sm);
+}
+
+.checkbox-card__icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.checkbox-card__text,
+.radio-card__text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  line-height: 1.3;
+}
+
+/* Radio check circle */
+.radio-card__check {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-border);
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.25s var(--ease);
+}
+
+.radio-card__check::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  transition: transform 0.25s var(--ease-back);
+}
+
+.radio-card input:checked + .radio-card__box .radio-card__check {
+  border-color: var(--clr-primary);
+}
+
+.radio-card input:checked + .radio-card__box .radio-card__check::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- Pill variant --- */
+.checkbox-card--pill .checkbox-card__box {
+  justify-content: center;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-radius: 60px;
+}
+
+/* --- Compact radio variant --- */
+.radio-card--compact .radio-card__box {
+  justify-content: center;
+  padding: 0.7rem 1.2rem;
+  border-radius: 60px;
+}
+
+.radio-card--compact .radio-card__text {
+  font-size: 0.9rem;
+}
+
+/* --- Radio group layouts --- */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.radio-group--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ============================================================
+   FORM NAVIGATION
+   ============================================================ */
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* ============================================================
+   THANK YOU
+   ============================================================ */
+.thankyou {
+  display: none;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #FAF8F5 0%, #EDE8E1 40%, #E2DDD5 100%);
+}
+
+.thankyou.active {
+  display: flex;
+}
+
+.thankyou__content {
+  text-align: center;
+  max-width: 540px;
+  padding: 2rem;
+  animation: fadeUp 0.8s var(--ease) both;
+}
+
+.thankyou__icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 0.6s var(--ease-back) 0.3s both;
+}
+
+.thankyou__title {
+  font-family: var(--ff-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--clr-primary-d);
+}
+
+.thankyou__text {
+  font-size: 1.1rem;
+  color: var(--clr-text-soft);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.thankyou__sub {
+  font-size: 0.95rem;
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+/* ============================================================
+   VALIDATION
+   ============================================================ */
+.field__input.error,
+.field__textarea.error {
+  border-color: var(--clr-danger);
+  box-shadow: 0 0 0 4px rgba(225,112,85,0.12);
+}
+
+.field__error-msg {
+  font-size: 0.8rem;
+  color: var(--clr-danger);
+  font-weight: 500;
+  animation: fadeUp 0.3s var(--ease);
+}
+
+.step.shake {
+  animation: shake 0.4s var(--ease);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(8px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .hero__content { padding: 1.5rem 1.25rem; }
+  .hero__title   { font-size: 2rem; }
+
+  .progress {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    position: static;
+  }
+
+  .progress__dot {
+    width: 30px; height: 30px;
+    font-size: 0.7rem;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-grid--sm {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .radio-group--inline {
+    flex-direction: column;
+  }
+
+  .form-nav {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .form-nav .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .step__title { font-size: 1.5rem; }
+}
+
+@media (max-width: 400px) {
+  .checkbox-grid--sm {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Design Questionnaire | Let's Build Your Dream Website</title>
+  <meta name="description" content="Complete this questionnaire so we can understand your vision and build the perfect website for your business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== HERO / INTRO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shapes">
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+      <div class="hero__circle hero__circle--3"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Website Design Questionnaire</p>
+      <h1 class="hero__title">Let's Build Your <em>Dream</em> Website</h1>
+      <p class="hero__subtitle">
+        This short questionnaire will help us understand your business, your vision, and your goals
+        so we can craft a website that truly represents you. It takes about <strong>10–15 minutes</strong>.
+      </p>
+      <button class="btn btn--primary btn--lg" id="startBtn">
+        Let's Get Started
+        <span class="btn__arrow">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <main class="form-wrapper" id="formWrapper">
+    <!-- Progress Bar -->
+    <div class="progress" id="progressBar">
+      <div class="progress__track">
+        <div class="progress__fill" id="progressFill"></div>
+      </div>
+      <div class="progress__steps" id="progressSteps">
+        <button class="progress__dot active" data-step="0" title="Business Overview"><span>1</span></button>
+        <button class="progress__dot" data-step="1" title="Target Audience"><span>2</span></button>
+        <button class="progress__dot" data-step="2" title="Branding"><span>3</span></button>
+        <button class="progress__dot" data-step="3" title="Content"><span>4</span></button>
+        <button class="progress__dot" data-step="4" title="Features"><span>5</span></button>
+        <button class="progress__dot" data-step="5" title="Marketing"><span>6</span></button>
+        <button class="progress__dot" data-step="6" title="Budget"><span>7</span></button>
+      </div>
+      <p class="progress__label" id="progressLabel">Step 1 of 7 &mdash; Business Overview</p>
+    </div>
+
+    <!-- 
+      =====================================================================
+      IMPORTANT: Replace YOUR_EMAIL@example.com below with your real email.
+      After the first submission, Formsubmit will send you a confirmation
+      email — click the link in it to activate your form.
+      =====================================================================
+    -->
+    <form
+      id="questionnaireForm"
+      action="https://formsubmit.co/kofinenyi@gmail.com"
+      method="POST"
+    >
+      <!-- Formsubmit config (hidden) -->
+      <input type="hidden" name="_subject" value="New Website Questionnaire Submission" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" />
+      <!-- Redirect to thank-you after submit -->
+      <input type="hidden" name="_next" value="" id="redirectUrl" />
+
+      <!-- ========== STEP 1: Business Overview ========== -->
+      <fieldset class="step active" data-step="0">
+        <div class="step__header">
+          <span class="step__number">01</span>
+          <h2 class="step__title">Business Overview &amp; Vision</h2>
+          <p class="step__desc">Let's start with the basics — tell us about your business and what you want to achieve.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label for="businessName" class="field__label">What is the name of your business? <span class="req">*</span></label>
+            <input type="text" id="businessName" name="Business Name" class="field__input" required placeholder="e.g., Serenity Yoga Studio" />
+          </div>
+          <div class="field">
+            <label for="mission" class="field__label">What is your core mission or philosophy?</label>
+            <textarea id="mission" name="Core Mission" class="field__textarea" rows="3" placeholder="e.g., Making yoga accessible to all ages and fitness levels..."></textarea>
+          </div>
+          <div class="field">
+            <label class="field__label">What are the primary goals for your new website? <span class="req">*</span></label>
+            <p class="field__hint">Select all that apply</p>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Increase class bookings" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">📅</span>
+                  <span class="checkbox-card__text">Increase class bookings</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Sell memberships or class packs" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">💳</span>
+                  <span class="checkbox-card__text">Sell memberships or class packs</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Build an email list" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">📧</span>
+                  <span class="checkbox-card__text">Build an email list</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Showcase instructor expertise" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">🧘</span>
+                  <span class="checkbox-card__text">Showcase instructor expertise</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Sell retail items" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">🛍️</span>
+                  <span class="checkbox-card__text">Sell retail items</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Goals" value="Provide online/on-demand video classes" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">🎥</span>
+                  <span class="checkbox-card__text">Online / on-demand classes</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="goalsOther" class="field__label">Any other goals?</label>
+            <input type="text" id="goalsOther" name="Other Goals" class="field__input" placeholder="Anything else you'd like the site to accomplish..." />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 2: Target Audience ========== -->
+      <fieldset class="step" data-step="1">
+        <div class="step__header">
+          <span class="step__number">02</span>
+          <h2 class="step__title">Target Audience &amp; Market</h2>
+          <p class="step__desc">Understanding your ideal clients helps us design a website tailored to them.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label for="idealStudent" class="field__label">Who is your ideal student? <span class="req">*</span></label>
+            <p class="field__hint">Think about age range, fitness level, occupation, location, etc.</p>
+            <textarea id="idealStudent" name="Ideal Student" class="field__textarea" rows="3" required placeholder="e.g., Women aged 25-45, busy professionals looking for stress relief..."></textarea>
+          </div>
+          <div class="field">
+            <label for="painPoints" class="field__label">What pain points are you solving for them?</label>
+            <textarea id="painPoints" name="Pain Points" class="field__textarea" rows="3" placeholder="e.g., Stress relief, injury recovery, building strength, community connection..."></textarea>
+          </div>
+          <div class="field">
+            <label class="field__label">What do you want visitors to <em>feel</em> when they land on your website?</label>
+            <p class="field__hint">Select all that apply</p>
+            <div class="checkbox-grid checkbox-grid--sm">
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Calm & Peaceful" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🕊️ Calm &amp; Peaceful</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Energized & Motivated" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">⚡ Energized</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Welcomed & Included" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🤗 Welcomed</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Inspired" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">✨ Inspired</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Focused & Professional" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🎯 Focused</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Desired Feeling" value="Luxurious & Exclusive" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">💎 Luxurious</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="competitors" class="field__label">Who are your main competitors?</label>
+            <p class="field__hint">List 2–3 local or online competitors so we can ensure your site stands out.</p>
+            <textarea id="competitors" name="Competitors" class="field__textarea" rows="3" placeholder="e.g., Sunrise Yoga (sunriseyoga.com), Flow Studio (flowstudio.com)..."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 3: Branding ========== -->
+      <fieldset class="step" data-step="2">
+        <div class="step__header">
+          <span class="step__number">03</span>
+          <h2 class="step__title">Branding &amp; Design</h2>
+          <p class="step__desc">Let's capture your visual identity so we can bring your brand to life online.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label class="field__label">Do you already have a logo and established brand guidelines? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Logo Status" value="Yes, logo and full brand guidelines" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Yes, I have a logo <strong>and</strong> full brand guidelines</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Logo Status" value="Yes, logo but no strict guidelines" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Yes, I have a logo but <strong>no strict guidelines</strong></span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Logo Status" value="No, need help with logo and branding" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">No, I need help with logo and branding</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="brandColors" class="field__label">Do you have specific brand colours or a preferred colour palette?</label>
+            <textarea id="brandColors" name="Brand Colors" class="field__textarea" rows="2" placeholder="e.g., Earthy tones — sage green, warm beige, terracotta..."></textarea>
+          </div>
+          <div class="field">
+            <label for="fonts" class="field__label">Do you have specific fonts or a preferred typography style?</label>
+            <textarea id="fonts" name="Typography" class="field__textarea" rows="2" placeholder="e.g., Clean and modern, elegant serif, handwritten feel..."></textarea>
+          </div>
+          <div class="field">
+            <label for="inspiration" class="field__label">Please share 3–5 links to websites you love</label>
+            <p class="field__hint">They don't have to be yoga websites. Tell us <em>why</em> you like them (layout, colours, navigation, etc.)</p>
+            <textarea id="inspiration" name="Website Inspiration" class="field__textarea" rows="4" placeholder="1. https://example.com — I love the calm colour palette and clean layout&#10;2. https://example2.com — The booking flow is really easy to use&#10;3. ..."></textarea>
+          </div>
+          <div class="field">
+            <label class="field__label">Do you have professional photography / video of your studio or classes?</label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Photography Status" value="Yes, plenty of professional photos/videos" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Yes, plenty of professional photos &amp; videos</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Photography Status" value="Some photos, might need stock imagery" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">We have some, but might need stock imagery</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Photography Status" value="No photos, need photoshoot or stock imagery" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">No, we need to arrange a photoshoot or use stock imagery</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 4: Content & Structure ========== -->
+      <fieldset class="step" data-step="3">
+        <div class="step__header">
+          <span class="step__number">04</span>
+          <h2 class="step__title">Content &amp; Structure</h2>
+          <p class="step__desc">This helps us map out the pages and navigation for your site.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label class="field__label">What pages do you think you'll need? <span class="req">*</span></label>
+            <p class="field__hint">Select all that apply</p>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Home" checked />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">🏠</span>
+                  <span class="checkbox-card__text">Home</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="About Us" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">💬</span>
+                  <span class="checkbox-card__text">About Us</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Class Schedule" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">📅</span>
+                  <span class="checkbox-card__text">Class Schedule</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Pricing / Memberships" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">💰</span>
+                  <span class="checkbox-card__text">Pricing / Memberships</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Instructors / Team" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">👥</span>
+                  <span class="checkbox-card__text">Instructors / Team</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Contact" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">📞</span>
+                  <span class="checkbox-card__text">Contact</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Blog" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">✍️</span>
+                  <span class="checkbox-card__text">Blog</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="FAQ" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">❓</span>
+                  <span class="checkbox-card__text">FAQ</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Testimonials / Reviews" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">⭐</span>
+                  <span class="checkbox-card__text">Testimonials</span>
+                </span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="Pages Needed" value="Gallery" />
+                <span class="checkbox-card__box">
+                  <span class="checkbox-card__icon">📸</span>
+                  <span class="checkbox-card__text">Gallery</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="otherPages" class="field__label">Any other pages not listed above?</label>
+            <input type="text" id="otherPages" name="Other Pages" class="field__input" placeholder="e.g., Retreats, Teacher Training, Shop..." />
+          </div>
+          <div class="field">
+            <label class="field__label">Who is writing the text (copy) for the website? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Copywriting" value="I will provide all final text" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">I will provide all final text</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Copywriting" value="I have drafts, need polishing" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">I have drafts, but need a copywriter to polish them</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Copywriting" value="I need full copywriting services" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">I need full copywriting services</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 5: Features ========== -->
+      <fieldset class="step" data-step="4">
+        <div class="step__header">
+          <span class="step__number">05</span>
+          <h2 class="step__title">Features &amp; Functionality</h2>
+          <p class="step__desc">Let's identify the technical tools your business needs to run smoothly.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label class="field__label">How do you handle class scheduling and bookings? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Booking System" value="We use an existing booking platform" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">We use an existing booking platform (e.g., MindBody, Momence, Acuity, Calendly)</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Booking System" value="We need a new booking system" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">We need a new booking system integrated into the site</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Booking System" value="We just use email / contact form" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">We just use a contact form or email</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bookingPlatform" class="field__label">If you use an existing booking platform, which one?</label>
+            <input type="text" id="bookingPlatform" name="Booking Platform Name" class="field__input" placeholder="e.g., MindBody, Momence, Acuity..." />
+          </div>
+          <div class="field">
+            <label class="field__label">Do you need to sell products online (e-commerce)?</label>
+            <div class="radio-group radio-group--inline">
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Ecommerce" value="Yes" />
+                <span class="radio-card__box"><span class="radio-card__text">Yes</span></span>
+              </label>
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Ecommerce" value="No" />
+                <span class="radio-card__box"><span class="radio-card__text">No</span></span>
+              </label>
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Ecommerce" value="Maybe in the future" />
+                <span class="radio-card__box"><span class="radio-card__text">Maybe later</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ecommerceDetails" class="field__label">If yes, what products would you sell?</label>
+            <input type="text" id="ecommerceDetails" name="Ecommerce Products" class="field__input" placeholder="e.g., Yoga mats, apparel, digital courses..." />
+          </div>
+          <div class="field">
+            <label class="field__label">How do you handle liability waivers for your students?</label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Waivers" value="Handled through booking software" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Handled through our booking software automatically</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Waivers" value="Need digital waiver on website" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">We need a digital waiver / consent form on the website</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Waivers" value="Not applicable" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Not applicable</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label">Any other features you'd like?</label>
+            <p class="field__hint">Select all that apply</p>
+            <div class="checkbox-grid checkbox-grid--sm">
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Instagram feed integration" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">📱 Instagram Feed</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Live chat" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">💬 Live Chat</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Multi-language support" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🌍 Multi-Language</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Members-only portal" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🔒 Members Portal</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Newsletter signup" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">📧 Newsletter Signup</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Extra Features" value="Google Maps integration" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">📍 Google Maps</span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 6: Marketing & SEO ========== -->
+      <fieldset class="step" data-step="5">
+        <div class="step__header">
+          <span class="step__number">06</span>
+          <h2 class="step__title">Marketing, SEO &amp; Analytics</h2>
+          <p class="step__desc">This ensures people can find you on Google and we can track your success.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label for="location" class="field__label">Where is your physical studio located?</label>
+            <p class="field__hint">Full address is ideal — this is crucial for local SEO (showing up on Google Maps).</p>
+            <input type="text" id="location" name="Studio Location" class="field__input" placeholder="e.g., 123 High Street, London, SW1A 1AA" />
+          </div>
+          <div class="field">
+            <label for="keywords" class="field__label">What are 3–5 keywords or phrases people would type into Google to find you?</label>
+            <textarea id="keywords" name="SEO Keywords" class="field__textarea" rows="3" placeholder="e.g., hot yoga in London, prenatal yoga classes near me, beginner yoga workshops..."></textarea>
+          </div>
+          <div class="field">
+            <label for="emailPlatform" class="field__label">Do you currently have an email marketing platform?</label>
+            <input type="text" id="emailPlatform" name="Email Marketing Platform" class="field__input" placeholder="e.g., Mailchimp, Flodesk, Constant Contact, or 'None'" />
+          </div>
+          <div class="field">
+            <label class="field__label">Do you need website analytics or tracking set up?</label>
+            <p class="field__hint">Select all that apply</p>
+            <div class="checkbox-grid checkbox-grid--sm">
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Analytics" value="Google Analytics" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">📊 Google Analytics</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Analytics" value="Facebook Pixel" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">📘 Facebook Pixel</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Analytics" value="Google Search Console" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🔍 Search Console</span></span>
+              </label>
+              <label class="checkbox-card checkbox-card--pill">
+                <input type="checkbox" name="Analytics" value="Not sure, need guidance" />
+                <span class="checkbox-card__box"><span class="checkbox-card__text">🤔 Not sure</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="socialMedia" class="field__label">What social media platforms are you active on?</label>
+            <input type="text" id="socialMedia" name="Social Media" class="field__input" placeholder="e.g., Instagram, Facebook, TikTok, YouTube..." />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========== STEP 7: Budget & Timeline ========== -->
+      <fieldset class="step" data-step="6">
+        <div class="step__header">
+          <span class="step__number">07</span>
+          <h2 class="step__title">Budget, Timeline &amp; Maintenance</h2>
+          <p class="step__desc">Let's align on scope, budget, and what happens after launch.</p>
+        </div>
+        <div class="step__body">
+          <div class="field">
+            <label for="launchDate" class="field__label">What is your target launch date? <span class="req">*</span></label>
+            <input type="text" id="launchDate" name="Target Launch Date" class="field__input" required placeholder="e.g., September 2026, ASAP, No rush..." />
+          </div>
+          <div class="field">
+            <label class="field__label">Do you already own your domain name? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Domain Status" value="Yes, I own a domain" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Yes, I already own one</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Domain Status" value="No, I need to purchase one" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">No, I need to purchase one</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="domainDetails" class="field__label">If yes, what is the domain and where is it registered?</label>
+            <input type="text" id="domainDetails" name="Domain Details" class="field__input" placeholder="e.g., www.yourstudio.com — registered with GoDaddy" />
+          </div>
+          <div class="field">
+            <label class="field__label">Do you already have website hosting?</label>
+            <div class="radio-group radio-group--inline">
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Hosting Status" value="Yes" />
+                <span class="radio-card__box"><span class="radio-card__text">Yes</span></span>
+              </label>
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Hosting Status" value="No, I need hosting set up" />
+                <span class="radio-card__box"><span class="radio-card__text">No</span></span>
+              </label>
+              <label class="radio-card radio-card--compact">
+                <input type="radio" name="Hosting Status" value="Not sure" />
+                <span class="radio-card__box"><span class="radio-card__text">Not sure</span></span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="hostingProvider" class="field__label">If yes, who is the hosting provider?</label>
+            <input type="text" id="hostingProvider" name="Hosting Provider" class="field__input" placeholder="e.g., GoDaddy, Bluehost, SiteGround..." />
+          </div>
+          <div class="field">
+            <label class="field__label">What is your anticipated monthly budget for website upkeep? <span class="req">*</span></label>
+            <p class="field__hint">This covers hosting, domain renewals, software subscriptions, and maintenance.</p>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Monthly Budget" value="Less than £50/month" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">Less than £50 / month</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Monthly Budget" value="£50 - £150/month" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">£50 – £150 / month</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Monthly Budget" value="£150+/month" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">£150+ / month</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label">After launch, who will maintain and update the website? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input type="radio" name="Maintenance Plan" value="I want to do it myself (training needed)" required />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">I want to do it myself (training may be needed)</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="Maintenance Plan" value="I want an ongoing maintenance plan" />
+                <span class="radio-card__box">
+                  <span class="radio-card__check"></span>
+                  <span class="radio-card__text">I'd like an ongoing maintenance plan — you handle updates</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="additionalComments" class="field__label">Any other comments, questions, or ideas?</label>
+            <textarea id="additionalComments" name="Additional Comments" class="field__textarea" rows="4" placeholder="Anything else you'd like us to know..."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Navigation Buttons -->
+      <div class="form-nav" id="formNav">
+        <button type="button" class="btn btn--ghost" id="prevBtn" disabled>
+          <span class="btn__arrow">&larr;</span> Back
+        </button>
+        <button type="button" class="btn btn--primary" id="nextBtn">
+          Next <span class="btn__arrow">&rarr;</span>
+        </button>
+        <button type="submit" class="btn btn--primary btn--submit" id="submitBtn" style="display:none;">
+          Submit Questionnaire <span class="btn__arrow">✓</span>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- ===== THANK YOU ===== -->
+  <section class="thankyou" id="thankyou">
+    <div class="thankyou__content">
+      <div class="thankyou__icon">🎉</div>
+      <h2 class="thankyou__title">Thank You!</h2>
+      <p class="thankyou__text">
+        Your questionnaire has been submitted successfully. We'll review your answers and be in touch shortly
+        to discuss the next steps for your website.
+      </p>
+      <p class="thankyou__sub">Keep an eye on your inbox — exciting things are coming!</p>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

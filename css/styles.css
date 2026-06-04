@@ -87,6 +87,15 @@ fieldset { border: none; }
   color: var(--clr-primary-d);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.header__logo:hover {
+  color: var(--clr-accent);
+  transform: translateY(-1px);
 }
 
 /* ============================================================

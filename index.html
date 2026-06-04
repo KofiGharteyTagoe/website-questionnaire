@@ -11,6 +11,19 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- ===== BACKGROUND ANIMATIONS ===== -->
+  <div class="bg-animated">
+    <svg class="bg-blob bg-blob--1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#E2E7DF" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.6,-46.3C91.4,-33.5,98,-18.1,97.7,-2.8C97.4,12.5,90.2,27.6,80.7,40.8C71.2,54,59.4,65.3,45.8,73.5C32.2,81.7,16.1,86.8,0.7,85.6C-14.7,84.4,-29.4,76.9,-43.3,68.8C-57.2,60.7,-70.3,52,-78.9,40.1C-87.5,28.2,-91.6,13.1,-90.6,-1.6C-89.6,-16.3,-83.5,-30.6,-74.6,-42.6C-65.7,-54.6,-54,-64.3,-41,-71.9C-28,-79.5,-14,-85,-0.2,-84.6C13.6,-84.2,27.2,-78,44.7,-76.4Z" transform="translate(100 100)" />
+    </svg>
+    <svg class="bg-blob bg-blob--2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#F0E5DE" d="M47.7,-67.2C60.6,-59.5,69,-44.6,73.8,-29C78.6,-13.4,79.8,2.9,76.5,18.8C73.2,34.7,65.4,50.2,53.2,60.7C41,71.2,24.4,76.7,7.7,78.8C-9,80.9,-25.8,79.6,-40.3,71.7C-54.8,63.8,-67,49.3,-74.5,33.1C-82,16.9,-84.8,-1,-80.7,-16.2C-76.6,-31.4,-65.6,-43.9,-53.1,-52.1C-40.6,-60.3,-26.6,-64.2,-12.3,-68.2C2,-72.2,16,-76.3,34.8,-74.9C53.6,-73.5,67.2,-71.7,47.7,-67.2Z" transform="translate(100 100)" />
+    </svg>
+    <svg class="bg-blob bg-blob--3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#F4F5F7" d="M39.6,-63.3C52.7,-57.4,65.6,-49.2,74,-37.4C82.4,-25.6,86.3,-10.2,85.5,5C84.7,20.2,79.2,35.2,69.5,46.8C59.8,58.4,45.9,66.6,31.4,71.1C16.9,75.6,1.8,76.4,-12.4,73.4C-26.6,70.4,-39.9,63.6,-50.2,53.6C-60.5,43.6,-67.8,30.4,-72.2,16.3C-76.6,2.2,-78.1,-12.8,-73.7,-26.1C-69.3,-39.4,-59,-51,-46.5,-57.2C-34,-63.4,-19.3,-64.2,-4.5,-63.8C10.3,-63.4,26.5,-69.2,39.6,-63.3Z" transform="translate(100 100)" />
+    </svg>
+  </div>
+
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="header__logo">KAGT</div>
@@ -86,28 +99,28 @@
         <div class="step__body">
           <div class="field">
             <label for="businessName" class="field__label">What is the name of your business? <span class="req">*</span></label>
-            <input type="text" id="businessName" name="Business Name" class="field__input" required placeholder="e.g., Serenity Yoga Studio" />
+            <input type="text" id="businessName" name="Business Name" class="field__input" required placeholder="e.g., Acme Consulting, Bloom Bakery..." />
           </div>
           <div class="field">
             <label for="mission" class="field__label">What is your core mission or philosophy?</label>
-            <textarea id="mission" name="Core Mission" class="field__textarea" rows="3" placeholder="e.g., Making yoga accessible to all ages and fitness levels..."></textarea>
+            <textarea id="mission" name="Core Mission" class="field__textarea" rows="3" placeholder="e.g., Providing top-tier accounting services for small businesses..."></textarea>
           </div>
           <div class="field">
             <label class="field__label">What are the primary goals for your new website? <span class="req">*</span></label>
             <p class="field__hint"><strong>Select all that apply</strong></p>
             <div class="checkbox-grid">
               <label class="checkbox-card">
-                <input type="checkbox" name="Goals" value="Increase class bookings" />
+                <input type="checkbox" name="Goals" value="Increase service bookings" />
                 <span class="checkbox-card__box">
                   <span class="checkbox-card__icon">📅</span>
-                  <span class="checkbox-card__text">Increase class bookings</span>
+                  <span class="checkbox-card__text">Increase service bookings</span>
                 </span>
               </label>
               <label class="checkbox-card">
-                <input type="checkbox" name="Goals" value="Sell memberships or class packs" />
+                <input type="checkbox" name="Goals" value="Sell memberships or packages" />
                 <span class="checkbox-card__box">
                   <span class="checkbox-card__icon">💳</span>
-                  <span class="checkbox-card__text">Sell memberships or class packs</span>
+                  <span class="checkbox-card__text">Sell memberships or packages</span>
                 </span>
               </label>
               <label class="checkbox-card">
@@ -118,10 +131,10 @@
                 </span>
               </label>
               <label class="checkbox-card">
-                <input type="checkbox" name="Goals" value="Showcase instructor expertise" />
+                <input type="checkbox" name="Goals" value="Showcase team expertise" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">🧘</span>
-                  <span class="checkbox-card__text">Showcase instructor expertise</span>
+                  <span class="checkbox-card__icon">🤝</span>
+                  <span class="checkbox-card__text">Showcase team expertise</span>
                 </span>
               </label>
               <label class="checkbox-card">
@@ -132,10 +145,10 @@
                 </span>
               </label>
               <label class="checkbox-card">
-                <input type="checkbox" name="Goals" value="Provide online/on-demand video classes" />
+                <input type="checkbox" name="Goals" value="Provide digital products / online courses" />
                 <span class="checkbox-card__box">
                   <span class="checkbox-card__icon">🎥</span>
-                  <span class="checkbox-card__text">Online / on-demand classes</span>
+                  <span class="checkbox-card__text">Digital products / online courses</span>
                 </span>
               </label>
             </div>
@@ -156,13 +169,13 @@
         </div>
         <div class="step__body">
           <div class="field">
-            <label for="idealStudent" class="field__label">Who is your ideal student? <span class="req">*</span></label>
-            <p class="field__hint">Think about age range, fitness level, occupation, location, etc.</p>
-            <textarea id="idealStudent" name="Ideal Student" class="field__textarea" rows="3" required placeholder="e.g., Women aged 25-45, busy professionals looking for stress relief..."></textarea>
+            <label for="idealStudent" class="field__label">Who is your ideal client / customer? <span class="req">*</span></label>
+            <p class="field__hint">Think about age range, income level, occupation, location, etc.</p>
+            <textarea id="idealStudent" name="Ideal Client" class="field__textarea" rows="3" required placeholder="e.g., Small business owners aged 30-50, needing help with digital marketing..."></textarea>
           </div>
           <div class="field">
             <label for="painPoints" class="field__label">What pain points are you solving for them?</label>
-            <textarea id="painPoints" name="Pain Points" class="field__textarea" rows="3" placeholder="e.g., Stress relief, injury recovery, building strength, community connection..."></textarea>
+            <textarea id="painPoints" name="Pain Points" class="field__textarea" rows="3" placeholder="e.g., Saving them time, increasing their revenue, providing peace of mind..."></textarea>
           </div>
           <div class="field">
             <label class="field__label">What do you want visitors to <em>feel</em> when they land on your website?</label>
@@ -201,7 +214,7 @@
           <div class="field">
             <label for="competitors" class="field__label">Who are your main competitors?</label>
             <p class="field__hint">List 2–3 local or online competitors so we can ensure your site stands out.</p>
-            <textarea id="competitors" name="Competitors" class="field__textarea" rows="3" placeholder="e.g., Sunrise Yoga (sunriseyoga.com), Flow Studio (flowstudio.com)..."></textarea>
+            <textarea id="competitors" name="Competitors" class="field__textarea" rows="3" placeholder="e.g., Competitor A (competitor-a.com), Competitor B (competitor-b.com)..."></textarea>
           </div>
         </div>
       </fieldset>
@@ -250,11 +263,11 @@
           </div>
           <div class="field">
             <label for="inspiration" class="field__label">Please share 3–5 links to websites you love</label>
-            <p class="field__hint">They don't have to be yoga websites. Tell us <em>why</em> you like them (layout, colours, navigation, etc.)</p>
+            <p class="field__hint">They don't have to be in your industry. Tell us <em>why</em> you like them (layout, colours, navigation, etc.)</p>
             <textarea id="inspiration" name="Website Inspiration" class="field__textarea" rows="4" placeholder="1. https://example.com — I love the calm colour palette and clean layout&#10;2. https://example2.com — The booking flow is really easy to use&#10;3. ..."></textarea>
           </div>
           <div class="field">
-            <label class="field__label">Do you have professional photography / video of your studio or classes?</label>
+            <label class="field__label">Do you have professional photography / video of your business, products, or team?</label>
             <div class="radio-group">
               <label class="radio-card">
                 <input type="radio" name="Photography Status" value="Yes, plenty of professional photos/videos" />
@@ -309,10 +322,10 @@
                 </span>
               </label>
               <label class="checkbox-card">
-                <input type="checkbox" name="Pages Needed" value="Class Schedule" />
+                <input type="checkbox" name="Pages Needed" value="Services / Offerings" />
                 <span class="checkbox-card__box">
                   <span class="checkbox-card__icon">📅</span>
-                  <span class="checkbox-card__text">Class Schedule</span>
+                  <span class="checkbox-card__text">Services / Offerings</span>
                 </span>
               </label>
               <label class="checkbox-card">
@@ -323,10 +336,10 @@
                 </span>
               </label>
               <label class="checkbox-card">
-                <input type="checkbox" name="Pages Needed" value="Instructors / Team" />
+                <input type="checkbox" name="Pages Needed" value="Team / About Us" />
                 <span class="checkbox-card__box">
                   <span class="checkbox-card__icon">👥</span>
-                  <span class="checkbox-card__text">Instructors / Team</span>
+                  <span class="checkbox-card__text">Team / About Us</span>
                 </span>
               </label>
               <label class="checkbox-card">
@@ -368,7 +381,7 @@
           </div>
           <div class="field">
             <label for="otherPages" class="field__label">Any other pages not listed above?</label>
-            <input type="text" id="otherPages" name="Other Pages" class="field__input" placeholder="e.g., Retreats, Teacher Training, Shop..." />
+            <input type="text" id="otherPages" name="Other Pages" class="field__input" placeholder="e.g., Portfolio, Case Studies, Shop..." />
           </div>
           <div class="field">
             <label class="field__label">Who is writing the text (copy) for the website? <span class="req">*</span></label>
@@ -408,13 +421,13 @@
         </div>
         <div class="step__body">
           <div class="field">
-            <label class="field__label">How do you handle class scheduling and bookings? <span class="req">*</span></label>
+            <label class="field__label">How do you handle appointment scheduling and bookings? <span class="req">*</span></label>
             <div class="radio-group">
               <label class="radio-card">
                 <input type="radio" name="Booking System" value="We use an existing booking platform" required />
                 <span class="radio-card__box">
                   <span class="radio-card__check"></span>
-                  <span class="radio-card__text">We use an existing booking platform (e.g., MindBody, Momence, Acuity, Calendly)</span>
+                  <span class="radio-card__text">We use an existing booking platform (e.g., Calendly, Acuity, MindBody)</span>
                 </span>
               </label>
               <label class="radio-card">
@@ -435,7 +448,7 @@
           </div>
           <div class="field">
             <label for="bookingPlatform" class="field__label">If you use an existing booking platform, which one?</label>
-            <input type="text" id="bookingPlatform" name="Booking Platform Name" class="field__input" placeholder="e.g., MindBody, Momence, Acuity..." />
+            <input type="text" id="bookingPlatform" name="Booking Platform Name" class="field__input" placeholder="e.g., Calendly, Acuity, Booksy..." />
           </div>
           <div class="field">
             <label class="field__label">Do you need to sell products online (e-commerce)?</label>
@@ -456,10 +469,10 @@
           </div>
           <div class="field">
             <label for="ecommerceDetails" class="field__label">If yes, what products would you sell?</label>
-            <input type="text" id="ecommerceDetails" name="Ecommerce Products" class="field__input" placeholder="e.g., Yoga mats, apparel, digital courses..." />
+            <input type="text" id="ecommerceDetails" name="Ecommerce Products" class="field__input" placeholder="e.g., Physical goods, digital courses, apparel..." />
           </div>
           <div class="field">
-            <label class="field__label">How do you handle liability waivers for your students?</label>
+            <label class="field__label">How do you handle client onboarding or intake forms?</label>
             <div class="radio-group">
               <label class="radio-card">
                 <input type="radio" name="Waivers" value="Handled through booking software" />
@@ -530,13 +543,13 @@
         </div>
         <div class="step__body">
           <div class="field">
-            <label for="location" class="field__label">Where is your physical studio located?</label>
+            <label for="location" class="field__label">Where is your physical business located?</label>
             <p class="field__hint">Full address is ideal — this is crucial for local SEO (showing up on Google Maps).</p>
-            <input type="text" id="location" name="Studio Location" class="field__input" placeholder="e.g., 123 High Street, London, SW1A 1AA" />
+            <input type="text" id="location" name="Business Location" class="field__input" placeholder="e.g., 123 High Street, London, SW1A 1AA" />
           </div>
           <div class="field">
             <label for="keywords" class="field__label">What are 3–5 keywords or phrases people would type into Google to find you?</label>
-            <textarea id="keywords" name="SEO Keywords" class="field__textarea" rows="3" placeholder="e.g., hot yoga in London, prenatal yoga classes near me, beginner yoga workshops..."></textarea>
+            <textarea id="keywords" name="SEO Keywords" class="field__textarea" rows="3" placeholder="e.g., accountants in London, best bakery near me, business consultants..."></textarea>
           </div>
           <div class="field">
             <label for="emailPlatform" class="field__label">Do you currently have an email marketing platform?</label>
@@ -608,7 +621,7 @@
           </div>
           <div class="field">
             <label for="domainDetails" class="field__label">If yes, what is the domain and where is it registered?</label>
-            <input type="text" id="domainDetails" name="Domain Details" class="field__input" placeholder="e.g., www.yourstudio.com — registered with GoDaddy" />
+            <input type="text" id="domainDetails" name="Domain Details" class="field__input" placeholder="e.g., www.yourbusiness.com — registered with GoDaddy" />
           </div>
           <div class="field">
             <label class="field__label">Do you already have website hosting?</label>

@@ -64,22 +64,29 @@ fieldset { border: none; }
    HEADER
    ============================================================ */
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 2rem;
-  z-index: 10;
+  padding: 1.25rem 2rem;
+  background: rgba(244, 245, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-border);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .header__logo {
   font-family: var(--ff-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--clr-text);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--clr-primary-d);
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ============================================================
@@ -265,7 +272,7 @@ fieldset { border: none; }
   display: none;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 2rem 1.25rem 6rem;
+  padding: 8rem 1.25rem 6rem;
   animation: fadeUp 0.6s var(--ease) both;
 }
 
@@ -282,8 +289,7 @@ fieldset { border: none; }
   background: var(--clr-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  position: sticky;
-  top: 1rem;
+  position: relative;
   z-index: 100;
 }
 
@@ -355,7 +361,7 @@ fieldset { border: none; }
    ============================================================ */
 .step {
   display: none;
-  animation: fadeUp 0.5s var(--ease) both;
+  animation: slideIn 0.5s var(--ease) both;
 }
 
 .step.active {
@@ -435,7 +441,7 @@ fieldset { border: none; }
   border-radius: var(--radius);
   background: var(--clr-surface);
   color: var(--clr-text);
-  transition: all 0.25s var(--ease);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
   width: 100%;
   outline: none;
 }
@@ -448,7 +454,8 @@ fieldset { border: none; }
 .field__input:focus,
 .field__textarea:focus {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 4px var(--clr-primary-l);
+  box-shadow: 0 0 0 4px var(--clr-primary-l), 0 4px 12px rgba(75, 90, 101, 0.08);
+  transform: translateY(-2px);
 }
 
 .field__textarea {
@@ -493,21 +500,24 @@ fieldset { border: none; }
   border: 2px solid var(--clr-border);
   border-radius: var(--radius);
   background: var(--clr-surface);
-  transition: all 0.25s var(--ease);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease);
   min-height: 52px;
 }
 
-.checkbox-card__box:hover,
-.radio-card__box:hover {
+.checkbox-card:hover .checkbox-card__box,
+.radio-card:hover .radio-card__box {
   border-color: var(--clr-primary);
-  background: var(--clr-primary-l);
+  background: var(--clr-surface-2);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 .checkbox-card input:checked + .checkbox-card__box,
 .radio-card input:checked + .radio-card__box {
   border-color: var(--clr-primary);
   background: var(--clr-primary-l);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(75, 90, 101, 0.1);
+  transform: translateY(-2px);
 }
 
 .checkbox-card__icon {
@@ -671,6 +681,11 @@ fieldset { border: none; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes bounce {

@@ -2,30 +2,30 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  /* Colour palette */
-  --clr-bg:        #FAF8F5;
+  /* Colour palette - Shifted to slightly more masculine/structured */
+  --clr-bg:        #F4F5F7;
   --clr-surface:   #FFFFFF;
-  --clr-surface-2: #F3F0EB;
-  --clr-border:    #E8E2DA;
-  --clr-text:      #2D3436;
-  --clr-text-soft: #636E72;
-  --clr-primary:   #7C9A82;
-  --clr-primary-d: #5E8065;
-  --clr-primary-l: rgba(124,154,130,0.12);
-  --clr-accent:    #C4866A;
-  --clr-accent-l:  rgba(196,134,106,0.12);
-  --clr-gold:      #D4A574;
-  --clr-danger:    #E17055;
+  --clr-surface-2: #EAECEF;
+  --clr-border:    #D1D6DC;
+  --clr-text:      #1F2428;
+  --clr-text-soft: #5C636A;
+  --clr-primary:   #4B5A65;
+  --clr-primary-d: #2A363F;
+  --clr-primary-l: rgba(75, 90, 101, 0.12);
+  --clr-accent:    #B86B4D;
+  --clr-accent-l:  rgba(184, 107, 77, 0.12);
+  --clr-gold:      #B08D57;
+  --clr-danger:    #D9534F;
 
   /* Typography */
   --ff-heading: 'Playfair Display', Georgia, serif;
   --ff-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Sizing */
+  /* Sizing - Sharper corners */
   --container: 720px;
-  --radius:    12px;
-  --radius-sm: 8px;
-  --radius-lg: 20px;
+  --radius:    4px;
+  --radius-sm: 2px;
+  --radius-lg: 8px;
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
@@ -61,6 +61,28 @@ body {
 fieldset { border: none; }
 
 /* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header__logo {
+  font-family: var(--ff-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
    HERO / INTRO
    ============================================================ */
 .hero {
@@ -70,7 +92,7 @@ fieldset { border: none; }
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, #FAF8F5 0%, #EDE8E1 40%, #E2DDD5 100%);
+  background: linear-gradient(160deg, #F4F5F7 0%, #EAECEF 40%, #DEE2E6 100%);
 }
 
 .hero__bg-shapes {
@@ -166,7 +188,7 @@ fieldset { border: none; }
   font-weight: 600;
   font-size: 1rem;
   padding: 0.85rem 1.8rem;
-  border-radius: 60px;
+  border-radius: 4px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.3s var(--ease);
@@ -352,7 +374,7 @@ fieldset { border: none; }
   color: var(--clr-primary);
   background: var(--clr-primary-l);
   padding: 0.3rem 0.8rem;
-  border-radius: 30px;
+  border-radius: 4px;
   margin-bottom: 0.75rem;
 }
 
@@ -535,14 +557,14 @@ fieldset { border: none; }
   justify-content: center;
   text-align: center;
   padding: 0.7rem 1rem;
-  border-radius: 60px;
+  border-radius: 4px;
 }
 
 /* --- Compact radio variant --- */
 .radio-card--compact .radio-card__box {
   justify-content: center;
   padding: 0.7rem 1.2rem;
-  border-radius: 60px;
+  border-radius: 4px;
 }
 
 .radio-card--compact .radio-card__text {
@@ -582,7 +604,7 @@ fieldset { border: none; }
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(160deg, #FAF8F5 0%, #EDE8E1 40%, #E2DDD5 100%);
+  background: linear-gradient(160deg, #F4F5F7 0%, #EAECEF 40%, #DEE2E6 100%);
 }
 
 .thankyou.active {

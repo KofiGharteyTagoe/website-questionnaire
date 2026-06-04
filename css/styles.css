@@ -482,6 +482,7 @@ fieldset { border: none; }
 .radio-card {
   cursor: pointer;
   display: block;
+  height: 100%;
 }
 
 .checkbox-card input,
@@ -502,6 +503,7 @@ fieldset { border: none; }
   background: var(--clr-surface);
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease);
   min-height: 52px;
+  height: 100%;
 }
 
 .checkbox-card:hover .checkbox-card__box,

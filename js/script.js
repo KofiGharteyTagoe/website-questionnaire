@@ -13,7 +13,6 @@
   const prevBtn       = document.getElementById('prevBtn');
   const nextBtn       = document.getElementById('nextBtn');
   const submitBtn     = document.getElementById('submitBtn');
-  const progressFill  = document.getElementById('progressFill');
   const progressLabel = document.getElementById('progressLabel');
   const dots          = document.querySelectorAll('.progress__dot');
   const steps         = document.querySelectorAll('.step');
@@ -32,30 +31,29 @@
     'Budget & Timeline',
   ];
 
-  // Set the redirect URL for Formsubmit (redirects back to same page with ?thanks param)
-  const redirectInput = document.getElementById('redirectUrl');
-  if (redirectInput) {
-    // Hardcoded exact repository path to prevent 404 redirects
-    redirectInput.value = 'https://kofigharteytagoe.github.io/website-questionnaire/?thanks=1';
-  }
+  const formStatus    = document.getElementById('formStatus');
+  const CONTACT_EMAIL = 'kofi@kagt.co.uk';
+  const reduceMotion  = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Check if we came back from a successful submission
-  if (window.location.search.includes('thanks=1')) {
-    showThankYou();
-    // Clean up the URL
-    window.history.replaceState({}, document.title, window.location.pathname);
+  // The puzzle board behind navy sections, with the same settings as kagt.co.uk's headers
+  const BOARD = {
+    pitch: 34, size: 24, gaps: 0.1, lit: 0.008, every: 1600,
+    piece: '#131C3E', glow: '#1A2549', litColour: '#0F4F52', seed: 1957,
+    moveColours: [['#8A2230', 3], ['#8C7424', 3], ['#0B5A3A', 3], ['#04060D', 1]],
+  };
+  function mountBoard(host) {
+    if (window.KagtTileField) KagtTileField.mount(host, BOARD);
   }
+  mountBoard(hero);
 
   // ---- START BUTTON ----
   startBtn.addEventListener('click', () => {
-    hero.style.opacity = '0';
-    hero.style.transform = 'translateY(-30px)';
-    hero.style.transition = 'all 0.5s cubic-bezier(0.4,0,0.2,1)';
+    hero.classList.add('is-leaving');
     setTimeout(() => {
       hero.style.display = 'none';
       formWrapper.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 400);
+      window.scrollTo({ top: 0 });
+    }, reduceMotion.matches ? 0 : 350);
   });
 
   // ---- NAVIGATION ----
@@ -115,16 +113,13 @@
 
   // ---- UPDATE PROGRESS ----
   function updateProgress() {
-    const pct = ((currentStep + 1) / TOTAL_STEPS) * 100;
-    progressFill.style.width = pct + '%';
-
     dots.forEach((dot, i) => {
       dot.classList.remove('active', 'completed');
       if (i === currentStep)  dot.classList.add('active');
       else if (i < currentStep) dot.classList.add('completed');
     });
 
-    progressLabel.textContent = `Step ${currentStep + 1} of ${TOTAL_STEPS} — ${stepLabels[currentStep]}`;
+    progressLabel.textContent = `Step ${currentStep + 1} of ${TOTAL_STEPS} · ${stepLabels[currentStep]}`;
   }
 
   // ---- UPDATE NAV BUTTONS ----
@@ -231,19 +226,70 @@
   });
 
   // ---- FORM SUBMIT ----
-  form.addEventListener('submit', (e) => {
-    if (!validateStep(currentStep)) {
-      e.preventDefault();
-      return;
+  // Sent in the background so the visitor never leaves the page; if it fails,
+  // their answers stay put and they can simply try again.
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateStep(currentStep)) return;
+
+    const originalLabel = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    formStatus.hidden = true;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(collectFormData()),
+        signal: controller.signal,
+      });
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.message || `HTTP ${res.status}`);
+      }
+      showThankYou();
+    } catch (err) {
+      console.error('Questionnaire submission failed:', err);
+      showSubmitError();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalLabel;
+    } finally {
+      clearTimeout(timeout);
     }
-    // Form submits normally to Formsubmit
   });
+
+  // Checkbox groups share one name, so join their values into a single
+  // comma-separated answer rather than letting later ticks overwrite earlier ones.
+  function collectFormData() {
+    const data = {};
+    for (const [key, value] of new FormData(form)) {
+      data[key] = key in data ? `${data[key]}, ${value}` : value;
+    }
+    return data;
+  }
+
+  function showSubmitError() {
+    formStatus.innerHTML =
+      'Sorry — something went wrong sending your answers. They haven\'t been lost, so please try again in a moment. ' +
+      `If it keeps happening, email us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+    formStatus.hidden = false;
+    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 
   // ---- THANK YOU ----
   function showThankYou() {
     hero.style.display = 'none';
     formWrapper.style.display = 'none';
     thankyou.classList.add('active');
+    window.scrollTo({ top: 0 });
+    mountBoard(thankyou);
+    // The brand's "solve" is kept for real completions, like the answers having actually sent
+    if (window.KagtMark) KagtMark.solve();
   }
 
   // ---- INITIAL STATE ----

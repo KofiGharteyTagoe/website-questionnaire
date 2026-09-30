@@ -1,94 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Design Questionnaire | Let's Build Your Dream Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Design Questionnaire · KAGT</title>
   <meta name="description" content="Complete this questionnaire so we can understand your vision and build the perfect website for your business." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#0E1733" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="icon" href="kagt-mark-16.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script>try{if(sessionStorage.getItem("kagt-intro"))document.documentElement.classList.add("kagt-intro-seen")}catch(e){}</script>
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/kagt/kagt-mark-motion.css" />
+  <link rel="stylesheet" href="assets/kagt/kagt-elements.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- ===== BACKGROUND ANIMATIONS ===== -->
-  <div class="bg-animated">
-    <svg class="bg-blob bg-blob--1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#E2E7DF" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.6,-46.3C91.4,-33.5,98,-18.1,97.7,-2.8C97.4,12.5,90.2,27.6,80.7,40.8C71.2,54,59.4,65.3,45.8,73.5C32.2,81.7,16.1,86.8,0.7,85.6C-14.7,84.4,-29.4,76.9,-43.3,68.8C-57.2,60.7,-70.3,52,-78.9,40.1C-87.5,28.2,-91.6,13.1,-90.6,-1.6C-89.6,-16.3,-83.5,-30.6,-74.6,-42.6C-65.7,-54.6,-54,-64.3,-41,-71.9C-28,-79.5,-14,-85,-0.2,-84.6C13.6,-84.2,27.2,-78,44.7,-76.4Z" transform="translate(100 100)" />
-    </svg>
-    <svg class="bg-blob bg-blob--2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#F0E5DE" d="M47.7,-67.2C60.6,-59.5,69,-44.6,73.8,-29C78.6,-13.4,79.8,2.9,76.5,18.8C73.2,34.7,65.4,50.2,53.2,60.7C41,71.2,24.4,76.7,7.7,78.8C-9,80.9,-25.8,79.6,-40.3,71.7C-54.8,63.8,-67,49.3,-74.5,33.1C-82,16.9,-84.8,-1,-80.7,-16.2C-76.6,-31.4,-65.6,-43.9,-53.1,-52.1C-40.6,-60.3,-26.6,-64.2,-12.3,-68.2C2,-72.2,16,-76.3,34.8,-74.9C53.6,-73.5,67.2,-71.7,47.7,-67.2Z" transform="translate(100 100)" />
-    </svg>
-    <svg class="bg-blob bg-blob--3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#F4F5F7" d="M39.6,-63.3C52.7,-57.4,65.6,-49.2,74,-37.4C82.4,-25.6,86.3,-10.2,85.5,5C84.7,20.2,79.2,35.2,69.5,46.8C59.8,58.4,45.9,66.6,31.4,71.1C16.9,75.6,1.8,76.4,-12.4,73.4C-26.6,70.4,-39.9,63.6,-50.2,53.6C-60.5,43.6,-67.8,30.4,-72.2,16.3C-76.6,2.2,-78.1,-12.8,-73.7,-26.1C-69.3,-39.4,-59,-51,-46.5,-57.2C-34,-63.4,-19.3,-64.2,-4.5,-63.8C10.3,-63.4,26.5,-69.2,39.6,-63.3Z" transform="translate(100 100)" />
-    </svg>
-  </div>
+  <a class="skip" href="#main">Skip to content</a>
 
   <!-- ===== HEADER ===== -->
-  <header class="header">
-    <a href="./" class="header__logo" aria-label="KAGT — back to start">KAGT</a>
+  <header class="site-head on-navy">
+    <div class="wrap">
+      <a class="kagt-link kagt-site-logo" href="https://kagt.co.uk/" target="_blank" rel="noopener" aria-label="KAGT (opens kagt.co.uk in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" class="is-intro kagt-mark kagt-lockup kagt-mark--on-navy" viewBox="0 0 134.611 44" role="img" aria-label="KAGT"><title>KAGT</title><rect class="kagt-square" x="0" y="0" width="44" height="44" rx="11" fill="#1B2750"/><g class="kagt-tile kagt-tile--k"><rect class="kagt-tile__bg" x="7" y="7" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M11.19 17.4V10.6H12.47V13.74L15.06 10.6H16.63L13.79 13.95L16.81 17.4H15.19L12.47 14.3V17.4Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--a"><rect class="kagt-tile__bg" x="23" y="7" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M26.96 17.4 29.04 10.6H30.96L33.04 17.4H31.71L31.28 15.98H28.72L28.29 17.4ZM30.91 14.78 29.99 11.8 29.08 14.78Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--g"><rect class="kagt-tile__bg" x="7" y="23" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M14 33.54Q13.35 33.54 12.77 33.31Q12.19 33.08 11.75 32.63Q11.3 32.19 11.04 31.53Q10.78 30.86 10.78 30Q10.78 28.87 11.22 28.08Q11.65 27.29 12.38 26.87Q13.11 26.46 14 26.46Q15.31 26.46 16.06 27.07Q16.81 27.68 17.06 28.79L15.75 28.98Q15.57 28.38 15.15 28.03Q14.73 27.67 14.08 27.67Q13.43 27.66 13 27.95Q12.57 28.23 12.36 28.76Q12.14 29.29 12.14 30Q12.14 30.71 12.36 31.23Q12.57 31.75 13 32.04Q13.43 32.32 14.08 32.33Q14.52 32.34 14.88 32.18Q15.23 32.02 15.48 31.68Q15.72 31.33 15.83 30.79H14.75V29.8H17.2Q17.21 29.86 17.21 30.02Q17.22 30.17 17.22 30.2Q17.22 31.18 16.82 31.93Q16.42 32.69 15.7 33.11Q14.98 33.54 14 33.54Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--t"><rect class="kagt-tile__bg" x="23" y="23" width="14" height="14" rx="3.5" fill="#00BFA5"/><path class="kagt-tile__letter" d="M29.36 33.4V27.8H27.21V26.6H32.79V27.8H30.64V33.4Z" fill="#0E1733"/></g><path class="kagt-wordmark" d="M57.2 32.56V11.44H61.19V21.18L69.23 11.44H74.1L65.27 21.85L74.65 32.56H69.61L61.19 22.94V32.56ZM75.83 32.56 82.28 11.44H88.23L94.69 32.56H90.58L89.22 28.16H81.27L79.93 32.56ZM88.07 24.43 85.21 15.18 82.4 24.43ZM106.13 33Q104.13 33 102.33 32.29Q100.53 31.58 99.14 30.18Q97.75 28.79 96.95 26.74Q96.15 24.68 96.15 22Q96.15 18.49 97.5 16.04Q98.84 13.58 101.1 12.29Q103.37 11 106.13 11Q110.21 11 112.54 12.89Q114.87 14.78 115.66 18.25L111.58 18.83Q111.01 16.98 109.71 15.88Q108.42 14.77 106.39 14.75Q104.38 14.73 103.05 15.62Q101.71 16.51 101.05 18.16Q100.38 19.8 100.38 22Q100.38 24.2 101.05 25.81Q101.71 27.43 103.05 28.32Q104.38 29.22 106.39 29.25Q107.76 29.27 108.86 28.78Q109.97 28.28 110.73 27.21Q111.5 26.14 111.82 24.46H108.47V21.38H116.07Q116.1 21.57 116.12 22.06Q116.13 22.54 116.13 22.62Q116.13 25.65 114.9 28Q113.67 30.35 111.42 31.67Q109.18 33 106.13 33ZM123.96 32.56V15.17H117.3V11.44H134.61V15.17H127.95V32.56Z" fill="#FFFFFF"/></svg></a>
+      <span class="site-head__note">Website questionnaire</span>
+    </div>
   </header>
 
+  <main id="main">
   <!-- ===== HERO / INTRO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg-shapes">
-      <div class="hero__circle hero__circle--1"></div>
-      <div class="hero__circle hero__circle--2"></div>
-      <div class="hero__circle hero__circle--3"></div>
-    </div>
-    <div class="hero__content">
-      <p class="hero__eyebrow">Website Design Questionnaire</p>
-      <h1 class="hero__title">Let's Build Your <em>Dream</em> Website</h1>
-      <p class="hero__subtitle">
-        This short questionnaire will help us understand your business, your vision, and your goals
-        so we can craft a website that truly represents you. It takes about <strong>10–15 minutes</strong>.
-      </p>
-      <button class="btn btn--primary btn--lg" id="startBtn">
-        Let's Get Started
-        <span class="btn__arrow">&rarr;</span>
-      </button>
+  <section class="hero on-navy kagt-field-host" id="hero">
+    <div class="wrap">
+      <div class="hero__words" data-kagt-keepout>
+        <p class="kicker">Website design questionnaire · about 10–15 minutes</p>
+        <h1 class="hero__title">Let's build your dream website</h1>
+        <p class="hero__subtitle"><span class="hl">This short questionnaire will help us understand your business, your vision and your goals, so we can craft a website that truly represents you.</span></p>
+        <div class="links">
+          <button type="button" class="btn signal" id="startBtn">Let's get started <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== FORM ===== -->
-  <main class="form-wrapper" id="formWrapper">
-    <!-- Progress Bar -->
+  <div class="form-wrapper" id="formWrapper">
+    <div class="wrap wrap--narrow">
+    <!-- Progress: one tile per step. Done steps are navy, the current one is lit teal. -->
     <div class="progress" id="progressBar">
-      <div class="progress__track">
-        <div class="progress__fill" id="progressFill"></div>
-      </div>
+      <p class="progress__label" id="progressLabel">Step 1 of 7 · Business Overview</p>
       <div class="progress__steps" id="progressSteps">
-        <button class="progress__dot active" data-step="0" title="Business Overview"><span>1</span></button>
-        <button class="progress__dot" data-step="1" title="Target Audience"><span>2</span></button>
-        <button class="progress__dot" data-step="2" title="Branding"><span>3</span></button>
-        <button class="progress__dot" data-step="3" title="Content"><span>4</span></button>
-        <button class="progress__dot" data-step="4" title="Features"><span>5</span></button>
-        <button class="progress__dot" data-step="5" title="Marketing"><span>6</span></button>
-        <button class="progress__dot" data-step="6" title="Budget"><span>7</span></button>
+        <button type="button" class="progress__dot active" data-step="0" title="Business Overview" aria-label="Step 1: Business Overview"><span>1</span></button>
+        <button type="button" class="progress__dot" data-step="1" title="Target Audience" aria-label="Step 2: Target Audience"><span>2</span></button>
+        <button type="button" class="progress__dot" data-step="2" title="Branding" aria-label="Step 3: Branding"><span>3</span></button>
+        <button type="button" class="progress__dot" data-step="3" title="Content" aria-label="Step 4: Content"><span>4</span></button>
+        <button type="button" class="progress__dot" data-step="4" title="Features" aria-label="Step 5: Features"><span>5</span></button>
+        <button type="button" class="progress__dot" data-step="5" title="Marketing" aria-label="Step 6: Marketing"><span>6</span></button>
+        <button type="button" class="progress__dot" data-step="6" title="Budget" aria-label="Step 7: Budget"><span>7</span></button>
       </div>
-      <p class="progress__label" id="progressLabel">Step 1 of 7 &mdash; Business Overview</p>
     </div>
 
-    <!-- 
+    <!--
       =====================================================================
-      IMPORTANT: Replace YOUR_EMAIL@example.com below with your real email.
-      After the first submission, Formsubmit will send you a confirmation
-      email — click the link in it to activate your form.
+      Submissions are sent via Web3Forms (https://web3forms.com).
+      The access key below sends them to kofi@kagt.co.uk. To change the
+      address, create a new key at web3forms.com and replace it here.
       =====================================================================
     -->
     <form
       id="questionnaireForm"
-      action="https://formsubmit.co/kofinenyi@gmail.com"
+      action="https://api.web3forms.com/submit"
       method="POST"
     >
-      <!-- Formsubmit config (hidden) -->
-      <input type="hidden" name="_subject" value="New Website Questionnaire Submission" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="text" name="_honey" style="display:none" />
-      <!-- Redirect to thank-you after submit -->
-      <input type="hidden" name="_next" value="" id="redirectUrl" />
+      <!-- Web3Forms config (hidden) -->
+      <input type="hidden" name="access_key" value="40cdc73e-b928-4a91-8cf9-ae575486ab3a" />
+      <input type="hidden" name="subject" value="New Website Questionnaire Submission" />
+      <input type="hidden" name="from_name" value="Website Questionnaire" />
+      <!-- Spam honeypot: bots tick this, humans never see it -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
       <!-- ========== STEP 1: Business Overview ========== -->
       <fieldset class="step active" data-step="0">
@@ -113,42 +101,36 @@
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Increase service bookings" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">📅</span>
                   <span class="checkbox-card__text">Increase service bookings</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Sell memberships or packages" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">💳</span>
                   <span class="checkbox-card__text">Sell memberships or packages</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Build an email list" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">📧</span>
                   <span class="checkbox-card__text">Build an email list</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Showcase team expertise" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">🤝</span>
                   <span class="checkbox-card__text">Showcase team expertise</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Sell retail items" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">🛍️</span>
                   <span class="checkbox-card__text">Sell retail items</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Goals" value="Provide digital products / online courses" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">🎥</span>
                   <span class="checkbox-card__text">Digital products / online courses</span>
                 </span>
               </label>
@@ -184,27 +166,27 @@
             <div class="checkbox-grid checkbox-grid--sm">
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Calm & Peaceful" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🕊️ Calm &amp; Peaceful</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Calm &amp; Peaceful</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Energized & Motivated" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">⚡ Energized</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Energized</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Welcomed & Included" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🤗 Welcomed</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Welcomed</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Inspired" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">✨ Inspired</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Inspired</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Focused & Professional" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🎯 Focused</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Focused</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Desired Feeling" value="Luxurious & Exclusive" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">💎 Luxurious</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Luxurious</span></span>
               </label>
             </div>
           </div>
@@ -234,21 +216,18 @@
               <label class="radio-card">
                 <input type="radio" name="Logo Status" value="Yes, logo and full brand guidelines" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Yes, I have a logo <strong>and</strong> full brand guidelines</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Logo Status" value="Yes, logo but no strict guidelines" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Yes, I have a logo but <strong>no strict guidelines</strong></span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Logo Status" value="No, need help with logo and branding" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">No, I need help with logo and branding</span>
                 </span>
               </label>
@@ -273,21 +252,18 @@
               <label class="radio-card">
                 <input type="radio" name="Photography Status" value="Yes, plenty of professional photos/videos" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Yes, plenty of professional photos &amp; videos</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Photography Status" value="Some photos, might need stock imagery" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">We have some, but might need stock imagery</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Photography Status" value="No photos, need photoshoot or stock imagery" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">No, we need to arrange a photoshoot or use stock imagery</span>
                 </span>
               </label>
@@ -311,70 +287,60 @@
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Home" checked />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">🏠</span>
                   <span class="checkbox-card__text">Home</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="About Us" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">💬</span>
                   <span class="checkbox-card__text">About Us</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Services / Offerings" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">📅</span>
                   <span class="checkbox-card__text">Services / Offerings</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Pricing / Memberships" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">💰</span>
                   <span class="checkbox-card__text">Pricing / Memberships</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Team / About Us" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">👥</span>
                   <span class="checkbox-card__text">Team / About Us</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Contact" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">📞</span>
                   <span class="checkbox-card__text">Contact</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Blog" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">✍️</span>
                   <span class="checkbox-card__text">Blog</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="FAQ" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">❓</span>
                   <span class="checkbox-card__text">FAQ</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Testimonials / Reviews" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">⭐</span>
                   <span class="checkbox-card__text">Testimonials</span>
                 </span>
               </label>
               <label class="checkbox-card">
                 <input type="checkbox" name="Pages Needed" value="Gallery" />
                 <span class="checkbox-card__box">
-                  <span class="checkbox-card__icon">📸</span>
                   <span class="checkbox-card__text">Gallery</span>
                 </span>
               </label>
@@ -390,21 +356,18 @@
               <label class="radio-card">
                 <input type="radio" name="Copywriting" value="I will provide all final text" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">I will provide all final text</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Copywriting" value="I have drafts, need polishing" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">I have drafts, but need a copywriter to polish them</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Copywriting" value="I need full copywriting services" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">I need full copywriting services</span>
                 </span>
               </label>
@@ -427,21 +390,18 @@
               <label class="radio-card">
                 <input type="radio" name="Booking System" value="We use an existing booking platform" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">We use an existing booking platform (e.g., Calendly, Acuity, MindBody)</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Booking System" value="We need a new booking system" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">We need a new booking system integrated into the site</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Booking System" value="We just use email / contact form" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">We just use a contact form or email</span>
                 </span>
               </label>
@@ -478,21 +438,18 @@
               <label class="radio-card">
                 <input type="radio" name="Waivers" value="Handled through booking software" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Handled through our booking software automatically</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Waivers" value="Need digital waiver on website" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">We need a digital waiver / consent form on the website</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Waivers" value="Not applicable" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Not applicable</span>
                 </span>
               </label>
@@ -504,27 +461,27 @@
             <div class="checkbox-grid checkbox-grid--sm">
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Instagram feed integration" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">📱 Instagram Feed</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Instagram Feed</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Live chat" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">💬 Live Chat</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Live Chat</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Multi-language support" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🌍 Multi-Language</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Multi-Language</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Members-only portal" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🔒 Members Portal</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Members Portal</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Newsletter signup" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">📧 Newsletter Signup</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Newsletter Signup</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Extra Features" value="Google Maps integration" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">📍 Google Maps</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Google Maps</span></span>
               </label>
             </div>
           </div>
@@ -562,19 +519,19 @@
             <div class="checkbox-grid checkbox-grid--sm">
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Analytics" value="Google Analytics" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">📊 Google Analytics</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Google Analytics</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Analytics" value="Facebook Pixel" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">📘 Facebook Pixel</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Facebook Pixel</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Analytics" value="Google Search Console" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🔍 Search Console</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Search Console</span></span>
               </label>
               <label class="checkbox-card checkbox-card--pill">
                 <input type="checkbox" name="Analytics" value="Not sure, need guidance" />
-                <span class="checkbox-card__box"><span class="checkbox-card__text">🤔 Not sure</span></span>
+                <span class="checkbox-card__box"><span class="checkbox-card__text">Not sure</span></span>
               </label>
             </div>
           </div>
@@ -607,14 +564,12 @@
               <label class="radio-card">
                 <input type="radio" name="Domain Status" value="Yes, I own a domain" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Yes, I already own one</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Domain Status" value="No, I need to purchase one" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">No, I need to purchase one</span>
                 </span>
               </label>
@@ -652,21 +607,18 @@
               <label class="radio-card">
                 <input type="radio" name="Monthly Budget" value="Less than £50/month" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">Less than £50 / month</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Monthly Budget" value="£50 - £150/month" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">£50 – £150 / month</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Monthly Budget" value="£150+/month" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">£150+ / month</span>
                 </span>
               </label>
@@ -678,14 +630,12 @@
               <label class="radio-card">
                 <input type="radio" name="Maintenance Plan" value="I want to do it myself (training needed)" required />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">I want to do it myself (training may be needed)</span>
                 </span>
               </label>
               <label class="radio-card">
                 <input type="radio" name="Maintenance Plan" value="I want an ongoing maintenance plan" />
                 <span class="radio-card__box">
-                  <span class="radio-card__check"></span>
                   <span class="radio-card__text">I'd like an ongoing maintenance plan — you handle updates</span>
                 </span>
               </label>
@@ -700,32 +650,47 @@
 
       <!-- Navigation Buttons -->
       <div class="form-nav" id="formNav">
-        <button type="button" class="btn btn--ghost" id="prevBtn" disabled>
-          <span class="btn__arrow">&larr;</span> Back
+        <button type="button" class="btn" id="prevBtn" disabled>
+          <span class="btn__arrow" aria-hidden="true">&larr;</span> Back
         </button>
-        <button type="button" class="btn btn--primary" id="nextBtn">
-          Next <span class="btn__arrow">&rarr;</span>
+        <button type="button" class="btn primary" id="nextBtn">
+          Next <span class="btn__arrow" aria-hidden="true">&rarr;</span>
         </button>
-        <button type="submit" class="btn btn--primary btn--submit" id="submitBtn" style="display:none;">
-          Submit Questionnaire <span class="btn__arrow">✓</span>
+        <button type="submit" class="btn primary btn--submit" id="submitBtn" style="display:none;">
+          Submit questionnaire <span class="btn__arrow" aria-hidden="true">&rarr;</span>
         </button>
       </div>
+      <p class="form-status" id="formStatus" role="alert" hidden></p>
     </form>
-  </main>
+    </div>
+  </div>
 
   <!-- ===== THANK YOU ===== -->
-  <section class="thankyou" id="thankyou">
-    <div class="thankyou__content">
-      <div class="thankyou__icon">🎉</div>
-      <h2 class="thankyou__title">Thank You!</h2>
-      <p class="thankyou__text">
-        Your questionnaire has been submitted successfully. We'll review your answers and be in touch shortly
-        to discuss the next steps for your website.
-      </p>
-      <p class="thankyou__sub">Keep an eye on your inbox — exciting things are coming!</p>
+  <section class="thankyou on-navy kagt-field-host" id="thankyou">
+    <div class="wrap">
+      <div class="thankyou__content" data-kagt-keepout>
+        <div class="thankyou__mark"><svg xmlns="http://www.w3.org/2000/svg" class="kagt-mark kagt-mark--on-navy" viewBox="0 0 44 44" role="img" aria-label="KAGT"><title>KAGT</title><rect class="kagt-square" x="0" y="0" width="44" height="44" rx="11" fill="#1B2750"/><g class="kagt-tile kagt-tile--k"><rect class="kagt-tile__bg" x="7" y="7" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M11.19 17.4V10.6H12.47V13.74L15.06 10.6H16.63L13.79 13.95L16.81 17.4H15.19L12.47 14.3V17.4Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--a"><rect class="kagt-tile__bg" x="23" y="7" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M26.96 17.4 29.04 10.6H30.96L33.04 17.4H31.71L31.28 15.98H28.72L28.29 17.4ZM30.91 14.78 29.99 11.8 29.08 14.78Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--g"><rect class="kagt-tile__bg" x="7" y="23" width="14" height="14" rx="3.5" fill="#34457A"/><path class="kagt-tile__letter" d="M14 33.54Q13.35 33.54 12.77 33.31Q12.19 33.08 11.75 32.63Q11.3 32.19 11.04 31.53Q10.78 30.86 10.78 30Q10.78 28.87 11.22 28.08Q11.65 27.29 12.38 26.87Q13.11 26.46 14 26.46Q15.31 26.46 16.06 27.07Q16.81 27.68 17.06 28.79L15.75 28.98Q15.57 28.38 15.15 28.03Q14.73 27.67 14.08 27.67Q13.43 27.66 13 27.95Q12.57 28.23 12.36 28.76Q12.14 29.29 12.14 30Q12.14 30.71 12.36 31.23Q12.57 31.75 13 32.04Q13.43 32.32 14.08 32.33Q14.52 32.34 14.88 32.18Q15.23 32.02 15.48 31.68Q15.72 31.33 15.83 30.79H14.75V29.8H17.2Q17.21 29.86 17.21 30.02Q17.22 30.17 17.22 30.2Q17.22 31.18 16.82 31.93Q16.42 32.69 15.7 33.11Q14.98 33.54 14 33.54Z" fill="#FFFFFF"/></g><g class="kagt-tile kagt-tile--t"><rect class="kagt-tile__bg" x="23" y="23" width="14" height="14" rx="3.5" fill="#00BFA5"/><path class="kagt-tile__letter" d="M29.36 33.4V27.8H27.21V26.6H32.79V27.8H30.64V33.4Z" fill="#0E1733"/></g></svg></div>
+        <h2 class="thankyou__title">Thank you</h2>
+        <p class="thankyou__text"><span class="hl">Your questionnaire has been submitted successfully. We'll review your answers and be in touch shortly to discuss the next steps for your website.</span></p>
+        <p class="kicker">Keep an eye on your inbox. Exciting things are coming.</p>
+      </div>
     </div>
   </section>
+  </main>
 
-  <script src="js/script.js"></script>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="left"><span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="KAGT"><title>KAGT</title><rect x="0" y="0" width="32" height="32" rx="8" fill="#0E1733"/><rect x="5" y="5" width="10" height="10" rx="2.5" fill="#6F7EAD"/><rect x="5" y="17" width="10" height="10" rx="2.5" fill="#6F7EAD"/><rect x="17" y="5" width="10" height="10" rx="2.5" fill="#6F7EAD"/><rect x="17" y="17" width="10" height="10" rx="2.5" fill="#00BFA5"/></svg></span><span>&copy; 2026 Kofi Ghartey-Tagoe · KAGT</span></div>
+      <nav aria-label="Elsewhere">
+        <a href="https://kagt.co.uk/" target="_blank" rel="noopener">kagt.co.uk</a>
+        <a href="mailto:kofi@kagt.co.uk">kofi@kagt.co.uk</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/kagt/kagt-motion.js" defer></script>
+  <script src="assets/kagt/kagt-tile-field.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

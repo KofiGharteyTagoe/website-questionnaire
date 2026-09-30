@@ -1,0 +1,158 @@
+/* KAGT mark motion: the puzzle.
+   K, A and G are pieces already in place; the teal T is the piece that fits and completes it.
+   Works on the inline mark, badge or lockup (the markup in svg/*.svg) and is embedded in
+   svg/kagt-mark-intro.svg and svg/kagt-mark-loader.svg.
+   Everything moves only when the viewer allows motion. At rest, and under reduced motion,
+   it is the static logo. Classes: is-intro, is-reseat, is-loading, is-fit, is-solve
+   (kagt-motion.js adds and removes them). */
+
+.kagt-mark {
+  --kagt-lit: #00BFA5;
+  --kagt-unlit: #2A3868;
+  --kagt-on-lit: #0E1733;
+  --kagt-on-unlit: #FFFFFF;
+  --kagt-ease-out: cubic-bezier(.2, .7, .2, 1);
+  --kagt-ease-snap: cubic-bezier(.34, 1.4, .64, 1);
+  overflow: visible;
+}
+.kagt-mark--on-navy { --kagt-unlit: #34457A; }
+.kagt-mark .kagt-tile, .kagt-mark .kagt-tile__bg { transform-box: fill-box; transform-origin: center; }
+/* A missing piece (the 404 page): the T's slot is empty until is-fit slides it in. Still, so it holds under reduced motion. */
+.kagt-mark.is-missing .kagt-tile--t { opacity: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* 1. Intro: K, A and G settle, then the T slides into the gap and lights as it lands. 900 ms, once per visit. */
+  .kagt-mark.is-intro .kagt-square { animation: kagt-fade 200ms var(--kagt-ease-out) both; }
+  .kagt-mark.is-intro .kagt-tile--k { animation: kagt-settle 320ms var(--kagt-ease-snap) 60ms both; }
+  .kagt-mark.is-intro .kagt-tile--a { animation: kagt-settle 320ms var(--kagt-ease-snap) 120ms both; }
+  .kagt-mark.is-intro .kagt-tile--g { animation: kagt-settle 320ms var(--kagt-ease-snap) 180ms both; }
+  .kagt-mark.is-intro .kagt-tile--t { animation: kagt-fit-in 420ms var(--kagt-ease-snap) 360ms both; }
+  .kagt-mark.is-intro .kagt-tile--t .kagt-tile__bg { animation: kagt-switch-on 200ms var(--kagt-ease-out) 700ms both; }
+  .kagt-mark.is-intro .kagt-tile--t .kagt-tile__letter { animation: kagt-switch-on-letter 200ms var(--kagt-ease-out) 700ms both; }
+  .kagt-intro-seen .kagt-mark.is-intro * { animation: none; }
+
+  /* 2. Reseat, on hover or keyboard focus: the T lifts out of its slot and clicks back in. 480 ms. */
+  .kagt-mark.is-reseat .kagt-tile--t { animation: kagt-reseat 480ms var(--kagt-ease-out) both; }
+
+  /* 3. Loading: a sliding puzzle. The T's slot is the gap; plain pieces slide into it one at a
+     time, lit while they move. 350 ms a move; the picture repeats every 4 moves (1.4 s, the design
+     system's progress bar speed) and every piece is home again after 12. */
+  .kagt-mark.is-loading .kagt-tile--t,
+  .kagt-mark.is-loading .kagt-tile__letter { opacity: 0; }
+  .kagt-mark.is-loading .kagt-tile__bg { fill: var(--kagt-unlit); }
+  .kagt-mark.is-loading .kagt-tile--k .kagt-tile__bg { animation: kagt-slide-k 4200ms linear infinite; }
+  .kagt-mark.is-loading .kagt-tile--a .kagt-tile__bg { animation: kagt-slide-a 4200ms linear infinite; }
+  .kagt-mark.is-loading .kagt-tile--g .kagt-tile__bg { animation: kagt-slide-g 4200ms linear infinite; }
+
+  /* 3b. Loaded: at the end of a lap the T slides home and lights (KagtMark.loaded does the timing). */
+  .kagt-mark.is-fit .kagt-tile--t { animation: kagt-fit-in 420ms var(--kagt-ease-snap) both; }
+  .kagt-mark.is-fit .kagt-tile--t .kagt-tile__bg { animation: kagt-switch-on 200ms var(--kagt-ease-out) 340ms both; }
+  .kagt-mark.is-fit .kagt-tile--t .kagt-tile__letter { animation: kagt-switch-on-letter 200ms var(--kagt-ease-out) 340ms both; }
+
+  /* 4. Solve, the hidden extra (type K, A, G, T): the pieces scramble, then slide back one by one
+     and the T lights last. 1.6 s. */
+  .kagt-mark.is-solve .kagt-tile--k { animation: kagt-solve-k 1600ms var(--kagt-ease-out) both; }
+  .kagt-mark.is-solve .kagt-tile--a { animation: kagt-solve-a 1600ms var(--kagt-ease-out) both; }
+  .kagt-mark.is-solve .kagt-tile--g { animation: kagt-solve-g 1600ms var(--kagt-ease-out) both; }
+  .kagt-mark.is-solve .kagt-tile--t { animation: kagt-solve-t 1600ms var(--kagt-ease-out) both; }
+  .kagt-mark.is-solve .kagt-tile--t .kagt-tile__bg { animation: kagt-solve-light 1600ms linear both; }
+  .kagt-mark.is-solve .kagt-tile--t .kagt-tile__letter { animation: kagt-solve-light-letter 1600ms linear both; }
+
+  /* 5. Press: a link that wraps the logo dips slightly when pressed. */
+  .kagt-link .kagt-mark { transition: transform 120ms var(--kagt-ease-out); }
+  .kagt-link:active .kagt-mark { transform: scale(.96); }
+}
+
+@keyframes kagt-fade { from { opacity: 0; } }
+@keyframes kagt-settle { from { opacity: 0; transform: scale(.7); } }
+@keyframes kagt-fit-in {
+  from { opacity: 0; transform: translate(10px, 10px); }
+  40% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+@keyframes kagt-switch-on { from { fill: var(--kagt-unlit); } to { fill: var(--kagt-lit); } }
+@keyframes kagt-switch-on-letter { from { fill: var(--kagt-on-unlit); } to { fill: var(--kagt-on-lit); } }
+@keyframes kagt-reseat {
+  0% { transform: none; }
+  40% { transform: translate(3px, 3px) scale(1.04); }
+  75% { transform: translate(-.6px, -.6px); }
+  100% { transform: none; }
+}
+@keyframes kagt-solve-k { 0% { transform: none; } 18%, 38% { transform: translate(16px, 16px); } 50%, 100% { transform: none; } }
+@keyframes kagt-solve-a { 0% { transform: none; } 18%, 48% { transform: translate(-16px, 16px); } 60%, 100% { transform: none; } }
+@keyframes kagt-solve-g { 0% { transform: none; } 18%, 58% { transform: translate(16px, -16px); } 70%, 100% { transform: none; } }
+@keyframes kagt-solve-t { 0% { transform: none; } 18%, 72% { transform: translate(-16px, -16px); } 86%, 100% { transform: none; } }
+@keyframes kagt-solve-light {
+  0% { fill: var(--kagt-lit); }
+  10%, 86% { fill: var(--kagt-unlit); }
+  94%, 100% { fill: var(--kagt-lit); }
+}
+@keyframes kagt-solve-light-letter {
+  0% { fill: var(--kagt-on-lit); }
+  10%, 86% { fill: var(--kagt-on-unlit); }
+  94%, 100% { fill: var(--kagt-on-lit); }
+}
+
+/* Sliding puzzle keyframes, generated by tools/loader_keyframes.py. Do not edit by hand. */
+/* LOADER-KEYFRAMES */
+@keyframes kagt-slide-k {
+  0.00% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  8.03% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  8.33% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  12.92% { transform: translate(16px, 0px); fill: var(--kagt-lit); }
+  16.25% { transform: translate(16px, 0px); fill: var(--kagt-unlit); }
+  33.03% { transform: translate(16px, 0px); fill: var(--kagt-unlit); }
+  33.33% { transform: translate(16px, 0px); fill: var(--kagt-lit); }
+  37.92% { transform: translate(16px, 16px); fill: var(--kagt-lit); }
+  41.25% { transform: translate(16px, 16px); fill: var(--kagt-unlit); }
+  58.03% { transform: translate(16px, 16px); fill: var(--kagt-unlit); }
+  58.33% { transform: translate(16px, 16px); fill: var(--kagt-lit); }
+  62.92% { transform: translate(0px, 16px); fill: var(--kagt-lit); }
+  66.25% { transform: translate(0px, 16px); fill: var(--kagt-unlit); }
+  83.03% { transform: translate(0px, 16px); fill: var(--kagt-unlit); }
+  83.33% { transform: translate(0px, 16px); fill: var(--kagt-lit); }
+  87.92% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  91.25% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  100.00% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+}
+@keyframes kagt-slide-a {
+  0.00% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  4.58% { transform: translate(0px, 16px); fill: var(--kagt-lit); }
+  7.92% { transform: translate(0px, 16px); fill: var(--kagt-unlit); }
+  24.70% { transform: translate(0px, 16px); fill: var(--kagt-unlit); }
+  25.00% { transform: translate(0px, 16px); fill: var(--kagt-lit); }
+  29.58% { transform: translate(-16px, 16px); fill: var(--kagt-lit); }
+  32.92% { transform: translate(-16px, 16px); fill: var(--kagt-unlit); }
+  49.70% { transform: translate(-16px, 16px); fill: var(--kagt-unlit); }
+  50.00% { transform: translate(-16px, 16px); fill: var(--kagt-lit); }
+  54.58% { transform: translate(-16px, 0px); fill: var(--kagt-lit); }
+  57.92% { transform: translate(-16px, 0px); fill: var(--kagt-unlit); }
+  74.70% { transform: translate(-16px, 0px); fill: var(--kagt-unlit); }
+  75.00% { transform: translate(-16px, 0px); fill: var(--kagt-lit); }
+  79.58% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  82.92% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  100.00% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+}
+@keyframes kagt-slide-g {
+  0.00% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  16.37% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  16.67% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  21.25% { transform: translate(0px, -16px); fill: var(--kagt-lit); }
+  24.58% { transform: translate(0px, -16px); fill: var(--kagt-unlit); }
+  41.37% { transform: translate(0px, -16px); fill: var(--kagt-unlit); }
+  41.67% { transform: translate(0px, -16px); fill: var(--kagt-lit); }
+  46.25% { transform: translate(16px, -16px); fill: var(--kagt-lit); }
+  49.58% { transform: translate(16px, -16px); fill: var(--kagt-unlit); }
+  66.37% { transform: translate(16px, -16px); fill: var(--kagt-unlit); }
+  66.67% { transform: translate(16px, -16px); fill: var(--kagt-lit); }
+  71.25% { transform: translate(16px, 0px); fill: var(--kagt-lit); }
+  74.58% { transform: translate(16px, 0px); fill: var(--kagt-unlit); }
+  91.37% { transform: translate(16px, 0px); fill: var(--kagt-unlit); }
+  91.67% { transform: translate(16px, 0px); fill: var(--kagt-lit); }
+  96.25% { transform: translate(0px, 0px); fill: var(--kagt-lit); }
+  99.58% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+  100.00% { transform: translate(0px, 0px); fill: var(--kagt-unlit); }
+}
+/* END LOADER-KEYFRAMES */
+

@@ -87,6 +87,19 @@
         </div>
         <div class="step__body">
           <div class="field">
+            <label for="contactName" class="field__label">What is your name? <span class="req">*</span></label>
+            <input type="text" id="contactName" name="name" class="field__input" required autocomplete="name" placeholder="e.g., Jane Smith" />
+          </div>
+          <div class="field">
+            <label for="contactEmail" class="field__label">What is your email address? <span class="req">*</span></label>
+            <p class="field__hint">So we can get back to you about your answers.</p>
+            <input type="email" id="contactEmail" name="email" class="field__input" required autocomplete="email" placeholder="e.g., jane@yourbusiness.com" />
+          </div>
+          <div class="field">
+            <label for="contactPhone" class="field__label">Phone number (optional)</label>
+            <input type="tel" id="contactPhone" name="Phone" class="field__input" autocomplete="tel" placeholder="e.g., 07123 456789" />
+          </div>
+          <div class="field">
             <label for="businessName" class="field__label">What is the name of your business? <span class="req">*</span></label>
             <input type="text" id="businessName" name="Business Name" class="field__input" required placeholder="e.g., Acme Consulting, Bloom Bakery..." />
           </div>

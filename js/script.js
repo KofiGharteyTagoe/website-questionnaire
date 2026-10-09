@@ -176,14 +176,15 @@
           }
         }
       } else {
-        if (!input.value.trim()) {
+        const empty = !input.value.trim();
+        if (empty || !input.checkValidity()) {
           valid = false;
           input.classList.add('error');
           const field = input.closest('.field');
           if (field && !field.querySelector('.field__error-msg')) {
             const msg = document.createElement('p');
             msg.className = 'field__error-msg';
-            msg.textContent = 'This field is required.';
+            msg.textContent = empty ? 'This field is required.' : 'Please enter a valid email address.';
             field.appendChild(msg);
           }
         }
